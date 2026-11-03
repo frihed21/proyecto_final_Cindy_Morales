@@ -1,20 +1,8 @@
 import {test, expect} from '@playwright/test';
-
-test("Error de modo estricto", async ({ page }) => {
-  await page.goto("https://automationexercise.com/");
-  await expect(page).toHaveTitle (/Exercise/);
-});
-
-test('Validar el inicio de la pagina', async ({ page }) => {
-    
-    await page.goto('https://automationexercise.com/');
-    await expect(page).toHaveTitle(/Automation/);
-    await page.getByRole('link', { name: 'Website for automation practice' }).click();
-});
-
+import {LoginPage} from '../../pages/LoginPage';
 
 test ('Inicio de Sesion Exitoso', async ({ page }) => {
-    await page.goto('https://automationexercise.com/login');
+    await page.goto('/login');
 
    const locatorList = page.getByRole('heading', { name: 'Login to your account' });
    await expect(locatorList).toHaveText('Login to your account');
@@ -38,7 +26,7 @@ test('Inicio de Sesion Fallido', async ({ page }) => {
     const locatorsignin = page.getByRole('link', { name: ' Signup / Login' });
     await expect(locatorsignin).toBeVisible();
     await locatorsignin.click();
-    await page.waitForURL('https://automationexercise.com/login');
+    await page.waitForURL('/login');
 
     const locatorList = page.getByRole('heading', { name: 'Login to your account' });
     await expect(locatorList).toHaveText('Login to your account');
@@ -58,9 +46,8 @@ test('Inicio de Sesion Fallido', async ({ page }) => {
 
 });
 
-
 test ('Log out user', async ({ page }) => {
-    await page.goto('https://automationexercise.com/login');
+    await page.goto('/login');
 
    const locatorList = page.getByRole('heading', { name: 'Login to your account' });
    await expect(locatorList).toHaveText('Login to your account');
@@ -78,3 +65,5 @@ test ('Log out user', async ({ page }) => {
     await expect(page.getByRole('link', { name: ' Logout' })).toBeVisible();
     await page.getByRole('link', { name: ' Logout' }).click();
 });
+
+
