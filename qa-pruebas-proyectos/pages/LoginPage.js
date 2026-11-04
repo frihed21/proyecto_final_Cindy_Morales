@@ -5,7 +5,7 @@ export class LoginPage {
         this.username = page.locator('[data-qa="login-email"]');
         this.password = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Login' });
-        this.logoutButton = page.getByRole('link', { name: /Logout/ });
+        this.logoutButton = page.getByRole('link', { name: ' Logout'});
         this.errorMessage = page.getByText('Your email or password is incorrect!');
     }
     //metodo para abrir la pagina de login
