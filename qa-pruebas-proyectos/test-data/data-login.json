@@ -1,0 +1,28 @@
+[
+  {
+    "title": "CP-AUTH-02 - Usuario inválido muestra mensaje de error",
+    "username": "incorrectUser@test.com",
+    "password": "incorrectPassword",
+    "validationType": "application",
+    "error": "Your email or password is incorrect!"
+  },
+  {
+    "title": "CP-AUTH-03 - Contraseña inválida muestra mensaje de error",
+    "password": "incorrectPassword",
+    "validationType": "application",
+    "error": "Your email or password is incorrect!"
+  },
+  {
+    "title": "CP-AUTH-05 - Usuario vacío muestra mensaje de error",
+    "username": "",
+    "password": "incorrectPassword",
+    "validationType": "native",
+    "field": "username"
+  },
+  {
+    "title": "CP-AUTH-06 - Contraseña vacía muestra mensaje de error",
+    "password": "",
+    "validationType": "native",
+    "field": "password"
+  }
+]

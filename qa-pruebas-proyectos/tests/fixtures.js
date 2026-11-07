@@ -21,6 +21,7 @@ export const test = base.extend({
         await homePage.goto();
         await use(homePage);
     },
+  
     productPage: async ({ page }, use) => {
         await use(new ProductPage(page));
     },
